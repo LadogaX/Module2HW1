@@ -31,7 +31,7 @@ namespace Module2HW1
 
         public string FormMessageString(LogType logType, string currentMessage)
         {
-            string mes = "{" + DateTime.Now.ToString() + "}: {" + logType.ToString().PadRight(maxLengthNameEnum) + "}: {" + currentMessage + "}" + (char)13 + (char)10;
+            string mes = "{" + DateTime.UtcNow.ToString() + "}: {" + logType.ToString().PadRight(maxLengthNameEnum) + "}: {" + currentMessage + "}" + (char)13 + (char)10;
             Message += mes;
             Console.WriteLine(mes);
             return mes;
