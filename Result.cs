@@ -8,7 +8,7 @@
             Message = message;
         }
 
-        public bool Status { get; init; }
-        public string Message { get; init; }
+        public bool Status { get; set; }
+        public string Message { get; set; }
     }
 }

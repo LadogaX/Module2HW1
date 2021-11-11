@@ -2,25 +2,23 @@
 {
     public static class Action
     {
-        public static Result MethodA()
+        public static void MethodA(string mes, ref Result res)
         {
-            // +new StackTrace(false).GetFrame(0).GetMethod().Name
-            Logger.GetInstance(LogType.Info, "Start method: MethodA");
-            return new Result(true);
+            // new StackTrace(false).GetFrame(0).GetMethod().Name
+            Logger.GetInstance().FormMessageString(LogType.Info, mes);
+            res.Status = true;
         }
 
-        public static Result MethodB()
+        public static void MethodB(string mes, ref Result res)
         {
-            Logger.GetInstance(LogType.Warning, "Skipped logic in method: MethodB");
-            return new Result(true);
+            Logger.GetInstance().FormMessageString(LogType.Warning, mes);
+            res.Status = true;
         }
 
-        public static Result MethodC()
+        public static void MethodC(string mes, ref Result res)
         {
-            string mes = "I broke a logic";
-
-            // Logger log = Logger.GetInstance(LogType.Error, mes);
-            return new Result(false, mes);
+            res.Message = mes;
+            res.Status = false;
         }
     }
 }
