@@ -1,9 +1,9 @@
-﻿namespace Module2HW1
+﻿using Module2HW1;
+
+public class Program
 {
-    public class Program
+    public static void Main()
     {
-      public static void Main()
-        {
-        }
+        new Starter().Run();
     }
 }
