@@ -1,3 +1,9 @@
 ﻿using Module2HW1;
 
-new Starter().Run();
+public class Program
+{
+    public static void Main()
+    {
+        new Starter().Run();
+    }
+}

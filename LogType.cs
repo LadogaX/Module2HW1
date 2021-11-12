@@ -1,6 +1,6 @@
 ﻿    public enum LogType
     {
-        Info = 1,
+        Info,
         Warning,
         Error
     }

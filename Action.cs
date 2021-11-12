@@ -1,24 +1,30 @@
 ﻿namespace Module2HW1
 {
-    public static class Action
+    public class Action
     {
-        public static void MethodA(string mes, ref Result res)
+        private string _message;
+        public Action(string message = "")
         {
-            // new StackTrace(false).GetFrame(0).GetMethod().Name
-            Logger.GetInstance().FormMessageString(LogType.Info, mes);
-            res.Status = true;
+            _message = message;
         }
 
-        public static void MethodB(string mes, ref Result res)
+        public Result MethodA()
         {
-            Logger.GetInstance().FormMessageString(LogType.Warning, mes);
-            res.Status = true;
+            Logger logger = Logger.Instance;
+            logger.AppendMessage(LogType.Info, _message);
+            return new Result(true, _message);
         }
 
-        public static void MethodC(string mes, ref Result res)
+        public Result MethodB()
         {
-            res.Message = mes;
-            res.Status = false;
+            Logger logger = Logger.Instance;
+            logger.AppendMessage(LogType.Warning, _message);
+            return new Result(true, _message);
+        }
+
+        public Result MethodC()
+        {
+            return new Result { Status = false };
         }
     }
 }
